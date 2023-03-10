@@ -1,0 +1,75 @@
+# TUM VI stereo rectify model
+# https://vision.in.tum.de/data/datasets/visual-inertial-dataset#geometric_calibration
+# pinhole (512x512)
+
+#==============#
+# Camera Model #
+#==============#
+
+Camera:
+  name: "TUM VI stereo"
+  setup: "stereo"
+  model: "perspective"
+
+  fx: 504.761904762
+  fy: 502.105263158
+  cx: 640.0
+  cy: 360.0
+
+# there is no distortion after stereo rectification
+
+  k1: 0.0
+  k2: 0.0
+  p1: 0.0
+  p2: 0.0
+  k3: 0.0
+
+# focal_x_baseline is -P2[0][3] which is calculated with cv::stereoRectify()
+
+  fps: 10
+  cols: 1280
+  rows: 720
+  focal_x_baseline: 60.5714285714
+
+  color_order: "RGB"
+
+#======================#
+# Stereo Rectification #
+#======================#
+
+# original intrinsic parameters (K, D) and stereo-recitification parameters (R)
+# matrices (K, R) are written in row-major order
+# StereoRectifier.model is camera model before rectification
+
+#=====================#
+# Tracking Parameters #
+#=====================#
+
+Preprocessing:
+  min_size: 800
+
+#================#
+# ORB Parameters #
+#================#
+
+Feature:
+  name: "default ORB feature extraction setting"
+  scale_factor: 1.2
+  num_levels: 8
+  ini_fast_threshold: 20
+  min_fast_threshold: 7
+
+#====================#
+# Mapping Parameters #
+#====================#
+
+Mapping:
+  baseline_dist_thr: 0.10108726432
+  redundant_obs_ratio_thr: 0.9
+
+#========================#
+# Initializer Parameters #
+#========================#
+
+Initializer:
+  num_min_triangulated_pts: 100

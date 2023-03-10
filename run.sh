@@ -10,5 +10,5 @@ docker run -it \
  -v $HOME/.Xauthority:/root/.Xauthority \
  --privileged \
  --net=host \
- --name=$1 \
+ --name=lunarsim \
  lunarsim:latest bash
