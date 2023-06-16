@@ -52,10 +52,11 @@ RUN touch /root/.bashrc \
 # CONFIGURE APPLICATION
 RUN mkdir -p /root/lunarsim
 
-# TODO: REPLACE WITH GITHUB RELEASE PACK USING WGET/CURL
-COPY Build0301.zip / 
-
-RUN cd /root/lunarsim && unzip /Build0301.zip && rm -f /Build0301.zip && chmod +x /root/lunarsim/lunarsim.x86_64
+RUN wget "https://github.com/PUTvision/LunarSim/releases/latest/download/LunarSim.tar.xz" \
+ && cd /root/lunarsim \
+ && tar xf /LunarSim.tar.xz \
+ && rm -f /LunarSim.tar.xz \
+ && chmod +x /root/lunarsim/LunarSim.x86_64
 
 WORKDIR /root/lunarsim
 
