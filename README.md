@@ -9,7 +9,7 @@
 
 ```bash
 # clone the repo
-git clone ...
+git clone https://github.com/PUTvision/LunarSim
 
 # change the working directory to LunarSim
 cd ./LunarSim
@@ -22,6 +22,10 @@ bash ./run.sh
 ```
 
 ## Data generation mode
+
+You can find sample image sequences generated with the simulator [here](https://chmura.put.poznan.pl/s/9CQiMdU6O9Olyli).
+
+We also provide our real images recorded during analogue lunar missions ([link](https://chmura.put.poznan.pl/s/HAybyHz1rgpyy9r)). 
 
 ## ROS 2 mode
 
@@ -90,7 +94,7 @@ bash ./run.sh
 
     ![moving_average](./examples/raspberry_pico_smaf/lunarsim_smf_rpi_z.png)
 
-* mage segmentation – FPGA
+* image segmentation – FPGA
 
     ```
     ./examples/versal_vck190_segment
