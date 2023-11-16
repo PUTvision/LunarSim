@@ -107,5 +107,17 @@ We also provide our real images recorded during analogue lunar missions ([link](
 If you use this code for your research, please cite our paper:
 
 ```
-SOON
+
+@Article{app132212401,
+AUTHOR = {Pieczyński, Dominik and Ptak, Bartosz and Kraft, Marek and Drapikowski, Paweł},
+TITLE = {LunarSim: Lunar Rover Simulator Focused on High Visual Fidelity and ROS 2 Integration for Advanced Computer Vision Algorithm Development},
+JOURNAL = {Applied Sciences},
+VOLUME = {13},
+YEAR = {2023},
+NUMBER = {22},
+ARTICLE-NUMBER = {12401},
+URL = {https://www.mdpi.com/2076-3417/13/22/12401},
+ISSN = {2076-3417},
+DOI = {10.3390/app132212401}
+}
 ```
