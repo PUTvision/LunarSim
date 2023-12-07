@@ -16,9 +16,32 @@ cd ./LunarSim
 
 # build docker image
 docker build -t lunarsim:latest .
+```
 
+## Run simulator
+
+```bash
 # run docker container
 bash ./run.sh
+
+# run the simulator
+./LunarSim.x86_64
+```
+
+> **Note:** DO NOT SOURCE ROS IN TERMINAL WHERE YOU RUN LUNARSIM
+
+## Attach to container and activate ROS (in new terminal)
+
+```bash
+# connect to container
+docker exec -it lunarsim bash
+
+# source ROS environment
+source /opt/ros/humble/setup.bash
+
+# then you can run sanity checks and display topics
+ros2 wtf
+ros2 topic list
 ```
 
 ## Data generation mode
@@ -42,6 +65,8 @@ We also provide our real images recorded during analogue lunar missions ([link](
 * `/lunarsim/gt/pose` (geometry_msgs/PoseStamped)
 
     The ground truth pose of the robot.
+
+  > For example, you can use terminal command `ros2 topic pub --once /cmd_vel geometry_msgs/msg/Twist "{linear: {x: 1.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}"`
 
 * `/lunarsim/imu` (sensor_msgs/Imu)
 
